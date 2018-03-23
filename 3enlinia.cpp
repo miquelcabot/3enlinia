@@ -1,5 +1,5 @@
 
-		/* Joc de tres en retxa	per Miquel A. Cabot */
+		/* Joc de tres en lÃ­nia	per Miquel A. Cabot */
 
 #include <dos.h>
 #include <stdlib.h>
@@ -57,7 +57,7 @@ return 0;		//no hi ha guanyador
 }
 
 
-//****************** Funci¢ pensar jugada de l'ordenador ********************
+//****************** FunciÂ¢ pensar jugada de l'ordenador ********************
 //***************************************************************************
 class pensar_jugada
 	{
@@ -256,7 +256,7 @@ void tauler::dib_tauler()
 {
 cleardevice();
 
-for (int i=0;i<3;i++)     //dibuixa les 4 l¡nies
+for (int i=0;i<3;i++)     //dibuixa les 4 lÂ¡nies
 	{
 	line(250+i,30,250+i,450);
 	line(250-i,30,250-i,450);
@@ -300,12 +300,12 @@ setcolor(15);
 rata.mostrar();
 }
 
-//**************************** funci¢ errada ********************************
+//**************************** funciÂ¢ errada ********************************
 //***************************************************************************
 void errada()
 {
 setcolor(0);
-outtextxy(10,10,"ÛÛÛÛÛÛÛÛÛÛÛ");
+outtextxy(10,10,"Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›");
 setcolor(15);
 settextstyle(1,0,2);
 outtextxy(10,10,"No val!");
@@ -314,7 +314,7 @@ delay(400);
 nosound();
 delay(500);
 setcolor(0);
-outtextxy(10,10,"ÛÛÛÛÛÛÛÛÛÛÛ");
+outtextxy(10,10,"Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›");
 setcolor(15);
 }
 
@@ -327,7 +327,7 @@ int i,j;
 int n_fitxes=0;
 
 settextstyle(1,0,2);
-outtextxy(10,10,"Mous t£");
+outtextxy(10,10,"Mous tÂ£");
 
 for (int n=0;n<9;n++)
 	if (posicio_jugadors[n]==1) n_fitxes++;
@@ -370,7 +370,7 @@ else if (n_fitxes==3)
 
 	delay(200);
 
-	do 	{               //seleccionar la posici¢ on es mou la fitxa
+	do 	{               //seleccionar la posiciÂ¢ on es mou la fitxa
 		do	{
 			rata.estat();
 			}while(!rata.izq);
@@ -409,7 +409,7 @@ for (int n=0;n<9;n++)
 	if (posicio_jugadors[n]==2) n_fitxes++;
 
 if (n_fitxes==0)
-	{ 			//si al mitg est… buit, posar-hi la fitxa
+	{ 			//si al mitg estÂ… buit, posar-hi la fitxa
 	if (posicio_jugadors[4]!=1) i=4;
 	else do	{		//si no, aleatoriament
 		randomize();
@@ -419,7 +419,7 @@ if (n_fitxes==0)
 	}
 
 else if (n_fitxes==1)
-	{          		//tapar el possible 3 en retxa del jugador
+	{          		//tapar el possible 3 en lÃ­nia del jugador
 	for (i=0;i<9;i++)
 		if (posicio_jugadors[i]==1) punts_jug+=puntuacio[i];
 	for (i=0;i<9;i++)
@@ -434,7 +434,7 @@ else if (n_fitxes==1)
 
 else if (n_fitxes==2)
 	{
-	for (i=0;i<9;i++)	//cercar si es pot fer 3 en retxa
+	for (i=0;i<9;i++)	//cercar si es pot fer 3 en lÃ­nia
 		if (posicio_jugadors[i]==2) punts_ord+=puntuacio[i];
 	for (i=0;i<9;i++)
 		if (puntuacio[i]==(15-punts_ord)) break;
@@ -498,13 +498,13 @@ posicio_jugadors[i]=2;
 rata.mostrar();
 }
 
-//*********************** funci¢ final **************************************
+//*********************** funciÂ¢ final **************************************
 //***************************************************************************
 void final(int guanyador)
 {
 taula.dib_tauler();
 gotoxy(1,1);
-if (guanyador==0) printf("No ha guanyat ning£\n");
+if (guanyador==0) printf("No ha guanyat ningÂ£\n");
 if (guanyador==1)
 	{
 	printf("Enhorabona, has guanyat\n");
@@ -543,7 +543,7 @@ if(!rata.iniciar())		//inicialitzar rata
 	exit(1);
 	}
 
-int gdriver = DETECT, gmode=VGAHI, errorcode;	//iniciar gr…fics
+int gdriver = DETECT, gmode=VGAHI, errorcode;	//iniciar grÂ…fics
 initgraph(&gdriver, &gmode, "c:\\tc\\bgi");
 errorcode = graphresult();
 if (errorcode != grOk)
@@ -556,13 +556,13 @@ if (errorcode != grOk)
 
 settextstyle(1,0,5);
 setcolor(5);
-outtextxy(100,100,"Joc de tres en retxa");
+outtextxy(100,100,"Joc de tres en lÃ­nia");
 settextstyle(1,0,3);
 setcolor(15);
 outtextxy(200,300,"Per Miquel A. Cabot");
 getch();
 
-int pos;     //posici¢ del cuadrant(0,1,2,..)
+int pos;     //posiciÂ¢ del cuadrant(0,1,2,..)
 int jugador;
 int seguir;
 
